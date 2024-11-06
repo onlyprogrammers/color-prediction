@@ -34,18 +34,18 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#070B34] to-[#1A1B4B] text-white pb-20">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#070B34]/80 backdrop-blur-sm border-b border-gray-800 p-3">
+      <header className="sticky top-0 z-50 bg-[#070B34]/80 backdrop-blur-sm border-b border-gray-800 p-2">
         <div className="flex items-center justify-between max-w-6xl mx-auto">
           <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Tiranga</h1>
-          <div className="flex items-center gap-4">
-            <Card className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-0 flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <Card className="bg-gradient-to-r from-purple-500 to-pink-500 p-1 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-0 flex items-center gap-1">
                 <div className="bg-white rounded-full p-2">
-                  <Wallet className="h-6 w-6 text-purple-600" />
+                  <Wallet className="h-4 w-4 text-purple-600" />
                 </div>
                 <div className="pr-3">
                   <p className="text-xs font-medium text-purple-100">Balance</p>
-                  <p className="font-bold text-white">₹10,000.00</p>
+                  <p className="text-base font-bold text-white">₹10,000.00</p>
                 </div>
               </CardContent>
             </Card>
@@ -256,7 +256,7 @@ export default function HomePage() {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 border-t border-gray-800 bg-[#070B34]/80 backdrop-blur-sm p-1">
+      <nav className="fixed py-2 bottom-0 left-0 right-0 border-t border-gray-800 bg-[#070B34]/80 backdrop-blur-sm p-1">
         <div className="flex items-center justify-around max-w-6xl mx-auto">
           {[
             { icon: <Gamepad2 className="h-6 w-6" />, label: "Games" },
