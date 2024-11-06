@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Trophy, Gift, Gamepad2, Coins, Fish, Globe, Bell, HeadphonesIcon, HelpCircle, Info, Download, Search, User, ChevronLeft, ChevronRight, Wallet } from "lucide-react"
+import football from '@/components/images/football.jpeg'
+import basketball from '@/components/images/basketball.jpeg'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -38,20 +40,23 @@ export default function HomePage() {
         <div className="flex items-center justify-between max-w-6xl mx-auto">
           <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Tiranga</h1>
           <div className="flex items-center gap-2">
-            <Card className="bg-gradient-to-r from-purple-500 to-pink-500 p-1 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card className="bg-gradient-to-r from-purple-500 to-pink-500 px-1 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-0 flex items-center gap-1">
                 <div className="bg-white rounded-full p-2">
                   <Wallet className="h-4 w-4 text-purple-600" />
                 </div>
                 <div className="pr-3">
                   <p className="text-xs font-medium text-purple-100">Balance</p>
-                  <p className="text-base font-bold text-white">₹10,000.00</p>
+                  <p className="text-sm font-bold text-white">₹10,000.00</p>
                 </div>
               </CardContent>
             </Card>
             <Button variant="ghost" size="icon" className="rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-300">
+              <Link href='/register'>
               <User className="h-5 w-5" />
               <span className="sr-only">User profile</span>
+              </Link>
+
             </Button>
           </div>
         </div>
@@ -204,9 +209,9 @@ export default function HomePage() {
         {/* Winning Information */}
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-green-400">Winning Information</h2>
-          <div className="space-y-3">
+          <div className="space-y-1">
             {winningInfo.map((info, index) => (
-              <div key={index} className="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg hover:bg-gray-800 transition-all duration-300">
+              <div key={index} className="flex items-center justify-between bg-gray-800/50 p-2 rounded-lg hover:bg-gray-800 transition-all duration-300 m-0">
                 <div className="flex items-center gap-3">
                   <Image
                     src={info.avatar}
@@ -277,8 +282,8 @@ export default function HomePage() {
 }
 
 const sportsCards = [
-  { title: "Football", image: "/placeholder.svg?height=200&width=300" },
-  { title: "Basketball", image: "/placeholder.svg?height=200&width=300" },
+  { title: "Football", image: football },
+  { title: "Basketball", image: basketball },
 ]
 
 const casinoGames = [
