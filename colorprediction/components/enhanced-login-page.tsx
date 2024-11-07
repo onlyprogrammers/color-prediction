@@ -127,7 +127,7 @@ export default function EnhancedLoginPage() {
           </Button>
 
           <div className="text-center">
-            <span className="text-gray-400">Don't have an account? </span>
+            <span className="text-gray-400">Don&#39;t have an account? </span>
             <Link href="/register" className="text-blue-400 hover:underline">
               Register
             </Link>
