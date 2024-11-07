@@ -2,12 +2,11 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Bell, ChevronRight, Gift, History, Home, LayoutGrid, LogOut, Settings, User, Wallet } from "lucide-react"
+import { Bell, ChevronRight, Gift, History, LayoutGrid, LogOut, Settings, User, Wallet } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
 export default function EnhancedProfilePage() {
-  const [activeTab, setActiveTab] = useState("Account")
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1a237e] to-[#0d47a1] text-white overflow-hidden">
