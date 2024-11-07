@@ -57,7 +57,7 @@ export default function EnhancedProfilePage() {
               <Button
                 key={index}
                 variant="ghost"
-                className="flex flex-col items-center gap-1 h-auto py-2 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105"
+                className="flex flex-col items-center gap-2 h-auto py-3 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105"
               >
                 {item.icon}
                 <span className="text-xs">{item.label}</span>
@@ -139,7 +139,7 @@ export default function EnhancedProfilePage() {
               <Button
                 key={index}
                 variant="ghost"
-                className="flex flex-col whitespace-nowrap items-center gap-1 h-auto py-3 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105 rounded-xl "
+                className="flex flex-col items-center gap-1 h-auto py-3 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105 rounded-xl"
               >
                 {item.icon}
                 <span className="text-xs">{item.label}</span>
@@ -152,15 +152,13 @@ export default function EnhancedProfilePage() {
         <Button
           variant="ghost"
           className="w-full bg-red-500 hover:bg-red-600 transition-colors py-6 text-lg font-semibold rounded-xl mb-14"
-          style={{marginBottom:'50px'}}
+          style={{borderBottom:'50px'}}
         >
           <LogOut className="h-6 w-6 mr-2" />
           Log out
         </Button>
       </div>
 
-      {/* Bottom Navigation */}
-      
     </div>
   )
 }
