@@ -11,6 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 export default function EnhancedLoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [loginType, setLoginType] = useState('phone')
+  const a=loginType;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-800 text-white">
