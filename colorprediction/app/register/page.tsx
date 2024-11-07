@@ -1,6 +1,7 @@
 // RegisterPage.tsx
 import React from 'react';
 import { Phone, Lock, UserPlus } from 'lucide-react';
+import register from '@/components/attractive-register-form'
 
 const RegisterPage: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const RegisterPage: React.FC = () => {
           <UserPlus className="w-6 h-6 text-blue-300" />
           <h1 className="text-3xl font-semibold">Tiranga Registration</h1>
         </div>
+
 
         {/* Register Form */}
         <form className="space-y-6">
@@ -86,4 +88,4 @@ const RegisterPage: React.FC = () => {
   );
 };
 
-export default RegisterPage;
+export default register;
