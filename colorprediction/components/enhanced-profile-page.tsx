@@ -152,7 +152,6 @@ export default function EnhancedProfilePage() {
         <Button
           variant="ghost"
           className="w-full bg-red-500 hover:bg-red-600 transition-colors py-6 text-lg font-semibold rounded-xl mb-14"
-          style={{marginBottom:'50px'}}
         >
           <LogOut className="h-6 w-6 mr-2" />
           Log out
