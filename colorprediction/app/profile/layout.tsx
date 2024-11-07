@@ -1,6 +1,5 @@
 import { Trophy, Gift, Gamepad2, Coins, Fish, } from "lucide-react"
 import { Button } from "@/components/ui/button";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, Key } from "react";
 
 
 export default function layout({
@@ -20,7 +19,7 @@ export default function layout({
                         { icon: <Trophy className="h-7 w-7" />, label: "Sports" },
                         { icon: <Coins className="h-7 w-7" />, label: "Casino" },
                         { icon: <Fish className="h-7 w-7" />, label: "Fishing" },
-                    ].map((item: { icon: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }, index: Key | null | undefined) => (
+                    ].map((item, index) => (
                         <Button key={index} variant="ghost" size="sm" className="flex scale-125 flex-col items-center gap-1 hover:bg-gray-800 transition-all duration-300 py-2 text-white">
                             {item.icon}
                             <span className="text-xs">{item.label}</span>
