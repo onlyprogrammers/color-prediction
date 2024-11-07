@@ -52,7 +52,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
             <Button variant="ghost" size="icon" className="rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-300">
-              <Link href='/register'>
+              <Link href='/profile'>
               <User className="h-5 w-5" />
               <span className="sr-only">User profile</span>
               </Link>

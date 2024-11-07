@@ -14,20 +14,20 @@ export default function EnhancedProfilePage() {
       {/* Profile Header */}
       <div className="relative h-28 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden mb-7">
         <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end gap-4">
+        <div className="absolute bottom-0 left-0 right-0 p-4 flex items-start gap-4">
           <div className="relative">
             <Image
               src="/placeholder.svg"
               alt="Profile"
-              width={80}
-              height={80}
+              width={60}
+              height={60}
               className="rounded-full border-4 border-white shadow-lg"
             />
             <div className="absolute -top-1 -right-1 bg-yellow-500 text-xs px-2 py-1 rounded-full shadow-md">VIP</div>
           </div>
           <div className="flex-grow">
             <div className="flex items-center gap-2">
-              <h1 className="text-2xl font-bold">MEMBERNNFRILX</h1>
+              <h1 className="text-lg font-bold">MEMBERNNFRILX</h1>
               <span className="bg-orange-500 text-xs px-2 py-1 rounded-full shadow-md">UID: 16915888</span>
             </div>
             <p className="text-sm text-gray-200">Last login: 2024-11-07 13:36:08</p>
@@ -47,7 +47,7 @@ export default function EnhancedProfilePage() {
               </Button>
             </h2>
           </div>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-1">
             {[
               { icon: <Wallet className="h-6 w-6" />, label: "Wallet" },
               { icon: <LayoutGrid className="h-6 w-6" />, label: "Deposit" },
@@ -57,7 +57,7 @@ export default function EnhancedProfilePage() {
               <Button
                 key={index}
                 variant="ghost"
-                className="flex flex-col items-center gap-2 h-auto py-3 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105"
+                className="flex flex-col items-center gap-1 h-auto py-2 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105"
               >
                 {item.icon}
                 <span className="text-xs">{item.label}</span>
@@ -86,7 +86,7 @@ export default function EnhancedProfilePage() {
         </Card>
 
         {/* Menu Items */}
-        <div className="space-y-3">
+        <div className="space-y-2 py-2">
           {[
             { icon: <History className="h-5 w-5" />, label: "Game History", sublabel: "My game history" },
             { icon: <History className="h-5 w-5" />, label: "Transaction", sublabel: "My transaction history" },
@@ -100,9 +100,9 @@ export default function EnhancedProfilePage() {
             <Button
               key={index}
               variant="ghost"
-              className="w-full justify-between bg-white/10 hover:bg-white/20 transition-all rounded-xl"
+              className="w-full justify-between bg-white/10 hover:bg-white/20 transition-all rounded-xl  py-3 "
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 py-2">
                 {item.icon}
                 <div className="text-left">
                   <div>{item.label}</div>
@@ -127,7 +127,7 @@ export default function EnhancedProfilePage() {
         {/* Service Center */}
         <Card className="p-6 bg-gradient-to-br from-[#283593] to-[#1e88e5] border-none rounded-xl shadow-lg">
           <h3 className="text-lg font-semibold mb-4">Service center</h3>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-1">
             {[
               { icon: <Settings className="h-6 w-6" />, label: "Settings" },
               { icon: <History className="h-6 w-6" />, label: "Feedback" },
@@ -139,7 +139,7 @@ export default function EnhancedProfilePage() {
               <Button
                 key={index}
                 variant="ghost"
-                className="flex flex-col items-center gap-2 h-auto py-4 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105 rounded-xl"
+                className="flex flex-col items-center gap-1 h-auto py-3 bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105 rounded-xl"
               >
                 {item.icon}
                 <span className="text-xs">{item.label}</span>
