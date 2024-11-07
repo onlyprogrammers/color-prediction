@@ -9,15 +9,19 @@ import { Input } from "@/components/ui/input"
 import { Trophy, Gift, Gamepad2, Coins, Fish, Globe, Bell, HeadphonesIcon, HelpCircle, Info, Download, Search, User, ChevronLeft, ChevronRight, Wallet } from "lucide-react"
 import football from '@/components/images/football.jpeg'
 import basketball from '@/components/images/basketball.jpeg'
+import loginbonus from '@/components/images/loginbonus.jpeg'
+import firstdeposit from '@/components/images/firstdiposit.jpeg'
+import refer from '@/components/images/refer.jpeg'
+
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const missionBonuses = [
-    { title: "Daily Login Bonus", description: "Log in daily to claim your bonus!", reward: "₹100", color: "from-purple-600 to-pink-600" },
-    { title: "First Deposit Bonus", description: "Get 100% bonus on your first deposit!", reward: "Up to ₹10,000", color: "from-blue-600 to-cyan-600" },
-    { title: "Refer a Friend", description: "Invite friends and earn rewards!", reward: "₹500 per referral", color: "from-green-600 to-teal-600" },
-    { title: "Weekly Cashback", description: "Get 10% cashback on your weekly losses!", reward: "Up to ₹5,000", color: "from-orange-600 to-yellow-600" },
+    { image:loginbonus,title: "Daily Login Bonus", description: "Log in daily to claim your bonus!", reward: "₹100", color: "from-purple-600 to-pink-600" },
+    { image:firstdeposit,title: "First Deposit Bonus", description: "Get 100% bonus on your first deposit!", reward: "Up to ₹10,000", color: "from-blue-600 to-cyan-600" },
+    { image:refer,title: "Refer a Friend", description: "Invite friends and earn rewards!", reward: "₹500 per referral", color: "from-green-600 to-teal-600" },
+    { image:firstdeposit,title: "Weekly Cashback", description: "Get 10% cashback on your weekly losses!", reward: "Up to ₹5,000", color: "from-orange-600 to-yellow-600" },
   ]
 
   const nextSlide = useCallback(() => {
@@ -79,18 +83,14 @@ export default function HomePage() {
             {missionBonuses.map((bonus, index) => (
               <Card key={index} className={`flex-shrink-0 w-full bg-gradient-to-r ${bonus.color}`}>
                 <CardContent className="p-4 relative">
-                  <div className="flex flex-col h-full justify-between">
-                    <div>
-                      <h2 className="text-2xl font-bold mb-2">{bonus.title}</h2>
-                      <p className="text-base opacity-90 mb-2">{bonus.description}</p>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <Button className="bg-white text-purple-600 hover:bg-gray-100 transition-colors duration-300">
-                        Claim Now
-                      </Button>
-                      <span className="text-xl font-bold">{bonus.reward}</span>
-                    </div>
-                  </div>
+                  <Image
+                    src={bonus.image}
+                    alt='bonus'
+                    
+                    className="w-full object-cover "
+                  />
+                  
+                
                   <div className="absolute top-0 right-0 bg-white/20 p-2 rounded-bl-lg">
                     <Gift className="h-6 w-6" />
                   </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed py-2 bottom-0 left-0 right-0 border-t border-gray-800 bg-[#070B34]/80 backdrop-blur-sm p-1">
+      <nav className="fixed py-3 bottom-0 left-0 right-0 border-t border-gray-800 bg-[#070B34]/80 backdrop-blur-sm p-1">
         <div className="flex items-center justify-around max-w-6xl mx-auto">
           {[
             { icon: <Gamepad2 className="h-7 w-7" />, label: "Games" },
@@ -270,7 +270,7 @@ export default function HomePage() {
             { icon: <Coins className="h-7 w-7" />, label: "Casino" },
             { icon: <Fish className="h-7 w-7" />, label: "Fishing" },
           ].map((item, index) => (
-            <Button key={index} variant="ghost" size="sm" className="flex flex-col items-center gap-1 py-2 hover:bg-gray-800 transition-all duration-300">
+            <Button key={index} variant="ghost" size="sm" className="flex scale-125 flex-col items-center gap-1 hover:bg-gray-800 transition-all duration-300 py-2">
               {item.icon}
               <span className="text-xs">{item.label}</span>
             </Button>
