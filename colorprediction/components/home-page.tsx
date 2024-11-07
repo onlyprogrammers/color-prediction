@@ -34,9 +34,9 @@ export default function HomePage() {
   }, [nextSlide])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#070B34] to-[#1A1B4B] text-white pb-20">
+    <div className="min-h-screen bg-gradient-to-b from-[#1a237e] to-[#0d47a1] text-white pb-20">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#070B34]/80 backdrop-blur-sm border-b border-gray-800 p-2">
+      <header className="sticky top-0 z-50 bg-[#1a237e]/80 backdrop-blur-sm border-b border-gray-800 p-2">
         <div className="flex items-center justify-between max-w-6xl mx-auto">
           <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Tiranga</h1>
           <div className="flex items-center gap-2">
@@ -264,13 +264,13 @@ export default function HomePage() {
       <nav className="fixed py-2 bottom-0 left-0 right-0 border-t border-gray-800 bg-[#070B34]/80 backdrop-blur-sm p-1">
         <div className="flex items-center justify-around max-w-6xl mx-auto">
           {[
-            { icon: <Gamepad2 className="h-6 w-6" />, label: "Games" },
-            { icon: <Gift className="h-6 w-6" />, label: "Lottery" },
-            { icon: <Trophy className="h-6 w-6" />, label: "Sports" },
-            { icon: <Coins className="h-6 w-6" />, label: "Casino" },
-            { icon: <Fish className="h-6 w-6" />, label: "Fishing" },
+            { icon: <Gamepad2 className="h-7 w-7" />, label: "Games" },
+            { icon: <Gift className="h-7 w-7" />, label: "Lottery" },
+            { icon: <Trophy className="h-7 w-7" />, label: "Sports" },
+            { icon: <Coins className="h-7 w-7" />, label: "Casino" },
+            { icon: <Fish className="h-7 w-7" />, label: "Fishing" },
           ].map((item, index) => (
-            <Button key={index} variant="ghost" size="sm" className="flex flex-col items-center gap-1 hover:bg-gray-800 transition-all duration-300">
+            <Button key={index} variant="ghost" size="sm" className="flex flex-col items-center gap-1 py-2 hover:bg-gray-800 transition-all duration-300">
               {item.icon}
               <span className="text-xs">{item.label}</span>
             </Button>
