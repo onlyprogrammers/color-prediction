@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image"
 import Link from "next/link"
 import { Trophy, Ticket, Coins, Smartphone, Trophy as TrophyIcon, PlayCircle, Fish, Plane } from "lucide-react"
 
