@@ -13,6 +13,7 @@ import loginbonus from '@/components/images/loginbonus.jpeg'
 import firstdeposit from '@/components/images/firstdiposit.jpeg'
 import refer from '@/components/images/refer.jpeg'
 import Navbar from '@/components/nav'
+import Gamingcatagry from "./gaming-categories"
 
 
 export default function HomePage() {
@@ -133,8 +134,10 @@ export default function HomePage() {
         </div>
 
         {/* live and popular section */}
-
-        
+        <h2 className="text-lg font-semibold flex items-center gap-2 text-red-600 p-0 m-0">
+            <Trophy className="h-5 w-5" /> Live & Popular
+          </h2>
+        <Gamingcatagry/>
         {/* Sports Section */}
 
 
