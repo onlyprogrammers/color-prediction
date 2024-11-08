@@ -7,13 +7,15 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Trophy, Gift, Coins, Fish, Globe, Bell, HeadphonesIcon, HelpCircle, Info, Download, Search, User, ChevronLeft, ChevronRight, Wallet } from "lucide-react"
-import football from '@/components/images/football.jpeg'
-import basketball from '@/components/images/basketball.jpeg'
+import wingo from '@/components/images/wingo.jpeg'
+import aviator from '@/components/images/aviator.jpeg'
 import loginbonus from '@/components/images/loginbonus.jpeg'
 import firstdeposit from '@/components/images/firstdiposit.jpeg'
 import refer from '@/components/images/refer.jpeg'
 import Navbar from '@/components/nav'
 import Gamingcatagry from "./gaming-categories"
+import spinnergif from '@/components/images/spinner.gif'
+import giftgif from '@/components/images/gift.gif'
 
 
 export default function HomePage() {
@@ -269,6 +271,32 @@ export default function HomePage() {
         </section>
       </main>
 
+      {/* gifts and spiner */}
+
+      <div className="fixed right-0 bottom-16 rounded-3xl flex-col backdrop-blur-sm"
+      style={{transform:'translatex(10px)'}}
+      >
+        <div className="relative ">
+          <Image
+          src={giftgif}
+          alt="spinner"
+          height={80}
+          width={80}
+          className="drop-shadow-lg"
+          style={{mixBlendMode:'lighten',transform:'translatex(-6px)'}}
+          />
+        </div>
+        <div className="relative ">
+          <Image
+          src={spinnergif}
+          alt="spinner"
+          height={60}
+          width={60}
+          className="drop-shadow-lg"
+          />
+        </div>
+      </div>
+
       {/* Bottom Navigation */}
       <Navbar/>
               
@@ -277,8 +305,8 @@ export default function HomePage() {
 }
 
 const sportsCards = [
-  { title: "Football", image: football },
-  { title: "Basketball", image: basketball },
+  { title: "Color prediction", image: wingo },
+  { title: "Aviator", image: aviator },
 ]
 
 const casinoGames = [

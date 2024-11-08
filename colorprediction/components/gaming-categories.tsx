@@ -19,7 +19,7 @@ const toptwo=[
 
 export default function Gamingcatagry() {
   return (
-    <div className="p-2 bg-transparent gap-2">
+    <div className="px-2 bg-transparent gap-2">
       <div className="grid grid-cols-2 gap-1 my-2" >
         {toptwo.map((category, index) => (
           <Link

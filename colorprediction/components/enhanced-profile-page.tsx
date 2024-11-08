@@ -33,7 +33,7 @@ export default function EnhancedProfilePage() {
         </div>
       </div>
 
-      <div className="px-4 py-6 space-y-6">
+      <div className="px-4 py-6 space-y-6 mb-14">
         {/* Balance Card */}
         <Card className="p-6 bg-gradient-to-br from-[#283593] to-[#1e88e5] border-none rounded-xl shadow-xl">
           <div className="text-center mb-6">
