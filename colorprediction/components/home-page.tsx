@@ -6,12 +6,13 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Trophy, Gift, Gamepad2, Coins, Fish, Globe, Bell, HeadphonesIcon, HelpCircle, Info, Download, Search, User, ChevronLeft, ChevronRight, Wallet } from "lucide-react"
+import { Trophy, Gift, Coins, Fish, Globe, Bell, HeadphonesIcon, HelpCircle, Info, Download, Search, User, ChevronLeft, ChevronRight, Wallet } from "lucide-react"
 import football from '@/components/images/football.jpeg'
 import basketball from '@/components/images/basketball.jpeg'
 import loginbonus from '@/components/images/loginbonus.jpeg'
 import firstdeposit from '@/components/images/firstdiposit.jpeg'
 import refer from '@/components/images/refer.jpeg'
+import Navbar from '@/components/nav'
 
 
 export default function HomePage() {
@@ -67,7 +68,7 @@ export default function HomePage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto space-y-6 p-3">
+      <main className="max-w-6xl mx-auto space-y-4 p-1">
         {/* Search Bar */}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -82,7 +83,7 @@ export default function HomePage() {
           >
             {missionBonuses.map((bonus, index) => (
               <Card key={index} className={`flex-shrink-0 w-full bg-gradient-to-r ${bonus.color}`}>
-                <CardContent className="p-4 relative">
+                <CardContent className="p-0 relative">
                   <Image
                     src={bonus.image}
                     alt='bonus'
@@ -131,12 +132,17 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* live and popular section */}
+
+        
         {/* Sports Section */}
+
+
         <section className="space-y-3">
           <h2 className="text-lg font-semibold flex items-center gap-2 text-yellow-400">
             <Trophy className="h-5 w-5" /> Sports
           </h2>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-1">
             {sportsCards.map((card, index) => (
               <Card key={index} className="bg-gray-800/50 overflow-hidden group hover:bg-gray-800 transition-all duration-300">
                 <CardContent className="p-0 relative">
@@ -157,11 +163,11 @@ export default function HomePage() {
         </section>
 
         {/* Casino Section */}
-        <section className="space-y-3">
+        <section className="space-y-1">
           <h2 className="text-lg font-semibold flex items-center gap-2 text-red-400">
             <Coins className="h-5 w-5" /> Casino
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
             {casinoGames.map((game, index) => (
               <Card key={index} className="bg-gray-800/50 overflow-hidden group hover:bg-gray-800 transition-all duration-300">
                 <CardContent className="p-0 relative">
@@ -182,11 +188,11 @@ export default function HomePage() {
         </section>
 
         {/* Fishing Games */}
-        <section className="space-y-3">
+        <section className="space-y-1">
           <h2 className="text-lg font-semibold flex items-center gap-2 text-blue-400">
             <Fish className="h-5 w-5" /> Fishing
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
             {fishingGames.map((game, index) => (
               <Card key={index} className="bg-gray-800/50 overflow-hidden group hover:bg-gray-800 transition-all duration-300">
                 <CardContent className="p-0 relative">
@@ -207,12 +213,12 @@ export default function HomePage() {
         </section>
 
         {/* Winning Information */}
-        <section className="space-y-3">
+        <section className="space-y-1">
           <h2 className="text-lg font-semibold text-green-400">Winning Information</h2>
           <div className="space-y-1">
             {winningInfo.map((info, index) => (
               <div key={index} className="flex items-center justify-between bg-gray-800/50 p-2 rounded-lg hover:bg-gray-800 transition-all duration-300 m-0">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1">
                   <Image
                     src={info.avatar}
                     alt={info.username}
@@ -229,7 +235,7 @@ export default function HomePage() {
         </section>
 
         {/* Platform Logos */}
-        <section className="grid grid-cols-3 gap-4">
+        <section className="grid grid-cols-3 gap-2">
           {platformLogos.map((logo, index) => (
             <Card key={index} className="bg-gray-800/50 p-2 hover:bg-gray-800 transition-all duration-300">
               <CardContent className="p-0 flex items-center justify-center">
@@ -261,22 +267,8 @@ export default function HomePage() {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed py-3 bottom-0 left-0 right-0 border-t border-gray-800 bg-[#070B34]/80 backdrop-blur-sm p-1">
-        <div className="flex items-center justify-around max-w-6xl mx-auto">
-          {[
-            { icon: <Gamepad2 className="h-7 w-7" />, label: "Games" },
-            { icon: <Gift className="h-7 w-7" />, label: "Lottery" },
-            { icon: <Trophy className="h-7 w-7" />, label: "Sports" },
-            { icon: <Coins className="h-7 w-7" />, label: "Casino" },
-            { icon: <Fish className="h-7 w-7" />, label: "Fishing" },
-          ].map((item, index) => (
-            <Button key={index} variant="ghost" size="sm" className="flex scale-125 flex-col items-center gap-1 hover:bg-gray-800 transition-all duration-300 py-2">
-              {item.icon}
-              <span className="text-xs">{item.label}</span>
-            </Button>
-          ))}
-        </div>
-      </nav>
+      <Navbar/>
+              
     </div>
   )
 }
