@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Trophy, Gift, Coins, Fish, Globe, Bell, HeadphonesIcon, HelpCircle, Info, Download, Search, User, ChevronLeft, ChevronRight, Wallet } from "lucide-react"
+import { Trophy, Gift, Coins, Globe, Bell, HeadphonesIcon, HelpCircle, Info, Download, Search, User, ChevronLeft, ChevronRight, Wallet } from "lucide-react"
 import wingo from '@/components/images/wingo.jpeg'
 import aviator from '@/components/images/aviator.jpeg'
 import loginbonus from '@/components/images/loginbonus.jpeg'
@@ -48,7 +48,19 @@ export default function HomePage() {
         <div className="flex items-center justify-between max-w-6xl mx-auto">
           <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Tiranga</h1>
           <div className="flex items-center gap-2">
-            <Card className="bg-gradient-to-r from-purple-500 to-pink-500 px-1 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+            {true?(<>
+
+            <div className=" px-2  hover:shadow-xl bg-transparent transition-shadow duration-300">
+              <div className="flex gap-2">
+                <Link href='/login' className="bg-blue-800 px-3 rounded-sm py-1 ">Login</Link>
+                <Link href='/register' className="bg-purple-700 px-3 rounded-sm py-1 ">Register</Link>
+              </div>
+              
+            </div>
+            
+            </>):(<>
+              <Card className="bg-gradient-to-r from-purple-500 to-pink-500 px-1 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-0 flex items-center gap-1">
                 <div className="bg-white rounded-full p-2">
                   <Wallet className="h-4 w-4 text-purple-600" />
@@ -66,6 +78,9 @@ export default function HomePage() {
               </Link>
 
             </Button>
+            </>)}
+
+            
           </div>
         </div>
       </header>
@@ -79,7 +94,9 @@ export default function HomePage() {
         </div>
 
         {/* Mission Bonus Carousel */}
-        <div className="relative overflow-hidden rounded-lg shadow-lg">
+        <div className="relative overflow-hidden rounded-lg shadow-lg "
+        style={{scale:'1 .9'}}
+        >
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -136,7 +153,9 @@ export default function HomePage() {
         </div>
 
         {/* live and popular section */}
-        <h2 className="text-lg font-semibold flex items-center gap-2 text-red-600 p-0 m-0">
+        <h2 className="text-lg font-semibold flex items-center gap-2 text-red-600 p-0 m-0" 
+        style={{margin:'0px'}}
+        >
             <Trophy className="h-5 w-5" /> Live & Popular
           </h2>
         <Gamingcatagry/>
@@ -151,16 +170,18 @@ export default function HomePage() {
             {sportsCards.map((card, index) => (
               <Card key={index} className="bg-gray-800/50 overflow-hidden group hover:bg-gray-800 transition-all duration-300">
                 <CardContent className="p-0 relative">
+                  <Link href={card.url}>
                   <Image
                     src={card.image}
                     alt={card.title}
                     width={300}
                     height={200}
                     className="w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                    />
+                    </Link>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                     <h3 className="text-base font-semibold group-hover:text-yellow-400 transition-colors">{card.title}</h3>
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
             ))}
@@ -193,29 +214,7 @@ export default function HomePage() {
         </section>
 
         {/* Fishing Games */}
-        <section className="space-y-1">
-          <h2 className="text-lg font-semibold flex items-center gap-2 text-blue-400">
-            <Fish className="h-5 w-5" /> Fishing
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
-            {fishingGames.map((game, index) => (
-              <Card key={index} className="bg-gray-800/50 overflow-hidden group hover:bg-gray-800 transition-all duration-300">
-                <CardContent className="p-0 relative">
-                  <Image
-                    src={game.image}
-                    alt={game.title}
-                    width={200}
-                    height={150}
-                    className="w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                    <h3 className="text-xs font-medium group-hover:text-blue-400 transition-colors">{game.title}</h3>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+        
 
         {/* Winning Information */}
         <section className="space-y-1">
@@ -273,7 +272,7 @@ export default function HomePage() {
 
       {/* gifts and spiner */}
 
-      <div className="fixed right-0 bottom-16 rounded-3xl flex-col backdrop-blur-sm"
+      <div className="fixed right-0 bottom-28 rounded-3xl flex-col"
       style={{transform:'translatex(10px)'}}
       >
         <div className="relative ">
@@ -305,8 +304,8 @@ export default function HomePage() {
 }
 
 const sportsCards = [
-  { title: "Color prediction", image: wingo },
-  { title: "Aviator", image: aviator },
+  { title: "Color prediction", image: wingo, url:'/games/wingo' },
+  { title: "Aviator", image: aviator,url:'/games/aviator' },
 ]
 
 const casinoGames = [
@@ -318,14 +317,7 @@ const casinoGames = [
   { title: "BlackJack", image: "/placeholder.svg?height=150&width=200" },
 ]
 
-const fishingGames = [
-  { title: "Royal Fishing", image: "/placeholder.svg?height=150&width=200" },
-  { title: "All-Star", image: "/placeholder.svg?height=150&width=200" },
-  { title: "Dragon Fishing", image: "/placeholder.svg?height=150&width=200" },
-  { title: "Jackpot Fishing", image: "/placeholder.svg?height=150&width=200" },
-  { title: "Golden Tycoon", image: "/placeholder.svg?height=150&width=200" },
-  { title: "Lucky Fishing", image: "/placeholder.svg?height=150&width=200" },
-]
+
 
 const winningInfo = [
   { username: "LuckyPlayer1", amount: "944.00", avatar: "/placeholder.svg?height=40&width=40" },

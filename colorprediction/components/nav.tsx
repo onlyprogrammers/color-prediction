@@ -7,7 +7,7 @@ export default function Navbar() {
         <>
         
 
-            <nav className="fixed py-3 bottom-0 left-0 right-0 border-t border-gray-800 bg-[#070B34]/80 backdrop-blur-sm p-1">
+            <nav className="fixed py-3 bottom-0 left-0 right-0 border-t border-gray-800 bg-[#1a237e]/80 backdrop-blur-sm p-1">
                 <div className="flex items-center justify-around max-w-6xl mx-auto">
                     {[
                         { icon: <Gamepad2 className="h-7 w-7" />, label: "Games" },
