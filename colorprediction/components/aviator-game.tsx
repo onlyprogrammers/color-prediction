@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Slider } from "@/components/ui/slider"
 import { Minus, Plus, History, RotateCcw, Plane } from "lucide-react"
-// import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function AviatorGame() {
   const [balance, setBalance] = useState(1000)
@@ -149,7 +149,46 @@ export default function AviatorGame() {
       {/* Game Area */}
       <div className="relative h-48 sm:h-64 md:h-80 mb-2 sm:mb-4 rounded-lg bg-gradient-to-b from-gray-800 to-gray-900 overflow-hidden shadow-lg">
         <canvas ref={canvasRef} width={400} height={300} className="w-full h-full" />
-        
+        <AnimatePresence>
+          {gameState === "waiting" && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              className="absolute inset-0 flex flex-col items-center justify-center"
+            >
+              <Plane className="w-12 h-12 sm:w-16 sm:h-16 text-red-500 mb-2 sm:mb-4" />
+              <div className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">Next Flight In</div>
+              <div className="text-3xl sm:text-5xl font-bold text-yellow-400">{countdown}s</div>
+            </motion.div>
+          )}
+          {(gameState === "flying" || gameState === "crashed") && (
+            <motion.div
+              key="multiplier"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <div className="text-5xl sm:text-8xl font-bold text-red-500 drop-shadow-glow">
+                {multiplier.toFixed(2)}x
+              </div>
+            </motion.div>
+          )}
+          {gameState === "crashed" && (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              className="absolute inset-x-0 bottom-4 sm:bottom-10 text-center"
+            >
+              <div className="text-2xl sm:text-4xl font-bold text-red-500 mb-1 sm:mb-2">CRASHED!</div>
+              <div className="text-lg sm:text-2xl font-semibold">
+                {activeBet > 0 ? "Better luck next time!" : "You cashed out in time!"}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Betting Controls */}
