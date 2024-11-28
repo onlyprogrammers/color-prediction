@@ -1,4 +1,4 @@
-import { Trophy, Gift, Gamepad2, Coins, Fish, Dices, User } from "lucide-react"
+import { Trophy, Gamepad2, Coins, Dices, User } from "lucide-react"
 import { Button } from "@/components/ui/button";
 
 
