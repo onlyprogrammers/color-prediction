@@ -1,4 +1,4 @@
-import { Trophy, Gift, Gamepad2, Coins, Fish, } from "lucide-react"
+import { Trophy, Gift, Gamepad2, Coins, Fish, Dices, User } from "lucide-react"
 import { Button } from "@/components/ui/button";
 
 
@@ -11,10 +11,10 @@ export default function Navbar() {
                 <div className="flex items-center justify-around max-w-6xl mx-auto">
                     {[
                         { icon: <Gamepad2 className="h-7 w-7" />, label: "Games" },
-                        { icon: <Gift className="h-7 w-7" />, label: "Lottery" },
+                        { icon: <Dices className="h-7 w-7" />, label: "Ludo" },
                         { icon: <Trophy className="h-7 w-7" />, label: "Sports" },
                         { icon: <Coins className="h-7 w-7" />, label: "Casino" },
-                        { icon: <Fish className="h-7 w-7" />, label: "Fishing" },
+                        { icon: <User className="h-7 w-7" />, label: "Profile" },
                     ].map((item, index) => (
                         <Button key={index} variant="ghost" size="sm" className="flex scale-125 flex-col items-center gap-1 hover:bg-gray-800 transition-all duration-300 py-2 text-white">
                             {item.icon}

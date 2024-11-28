@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import { Trophy, Ticket, Coins, Smartphone, Trophy as TrophyIcon, PlayCircle, Fish, Plane } from "lucide-react"
+import { Frame, Dices, Coins, Smartphone, Trophy as TrophyIcon, PlayCircle, Fish, Plane } from "lucide-react"
 
 const categories = [
   
@@ -13,14 +13,14 @@ const categories = [
   { title: "Original", icon: Plane, bgClass: "from-sky-400 to-blue-500", href: "#original" },
 ]
 const toptwo=[
-  { title: "Popular", icon: Trophy, bgClass: "from-blue-500 to-blue-600", href: "#popular" },
-  { title: "Lottery", icon: Ticket, bgClass: "from-purple-500 to-purple-600", href: "#lottery" },
+  { title: "Ludo", icon: Dices, bgClass: "from-purple-500 to-purple-600", href: "#lottery" },
+  { title: "TicTacToe", icon: Frame, bgClass: "from-blue-500 to-blue-600", href: "#popular" },
 ]
 
 export default function Gamingcatagry() {
   return (
     <div className="px-2 bg-transparent gap-2">
-      <div className="grid grid-cols-2 gap-1 my-2" >
+      <div className="grid grid-cols-2 gap-1 my-2" style={{scale:'1 .9'}}>
         {toptwo.map((category, index) => (
           <Link
             key={category.title}

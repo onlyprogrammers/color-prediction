@@ -22,16 +22,13 @@ export default function AttractiveRegisterForm() {
     <div className="min-h-screen bg-gradient-to-br from-[#1e2875] to-[#3a1e75] text-white">
       <div className="container max-w-md px-3 py-3">
         <div className="mb-6 flex items-center">
-          <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 transition-colors">
+          <Button onClick={window.history.go(-1)} variant="ghost" size="icon" className="text-white hover:bg-white/10 transition-colors">
             <ChevronLeft className="h-6 w-6" />
           </Button>
 
         </div>
 
-        <h1 className="mb-1 text-2xl font-bold text-center">Register</h1>
-        <p className="mb-6 text-sm text-gray-300 text-center">
-          Please register by phone number or email
-        </p>
+        
         <div className="flex items-center justify-center gap-2 border-b-2 mb-4 border-blue-400">
 
 
