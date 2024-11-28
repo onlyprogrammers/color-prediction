@@ -17,12 +17,15 @@ import {
 export default function AttractiveRegisterForm() {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const back=()=>{
+    window.history.go(-1)
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1e2875] to-[#3a1e75] text-white">
       <div className="container max-w-md px-3 py-3">
         <div className="mb-6 flex items-center">
-          <Button onClick={window.history.go(-1)} variant="ghost" size="icon" className="text-white hover:bg-white/10 transition-colors">
+          <Button onClick={back} variant="ghost" size="icon" className="text-white hover:bg-white/10 transition-colors">
             <ChevronLeft className="h-6 w-6" />
           </Button>
 
